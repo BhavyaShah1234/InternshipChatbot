@@ -1,0 +1,20 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TGen Internship Chatbot</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    </head>
+    <body>
+        <h1>TGen Helios Scholar Chatbot</h1>
+        <form action="{{ url_for('home') }}" method="post">
+            <input class="question" id="question" name="question" type="text" placeholder="Ask me anything regarding the internship at TGen">
+            <button class="submit" id="submit" name="submit" type="submit">Search</button>
+        </form>
+        <br>
+        {% if answer %}
+            <p class="answer" id="answer">{{ answer }}</p>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </body>
+</html>
